@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>yes.its_kairin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body data-page="home">
+    <div class="pompom-sticker" aria-hidden="true"></div>
+    <div class="pompom-sticker secondary" aria-hidden="true"></div>
+    <div class="pompom-sticker tertiary" aria-hidden="true"></div>
+    <div class="cursor-follower" aria-hidden="true"></div>
+    <div class="game-hud" data-game-hud aria-live="polite"></div>
+    <div class="page">
+      <header>
+        <nav class="nav">
+          <div class="brand">
+            Kairin Batrisyiah <span class="brand-cat" aria-hidden="true"></span>
+          </div>
+          <div class="nav-links">
+            <button class="theme-toggle" type="button" data-theme-toggle>
+              <span class="theme-toggle__bulb" aria-hidden="true"></span>
+              <span class="theme-toggle__cord" aria-hidden="true"></span>
+              <span class="theme-toggle__pull" aria-hidden="true"></span>
+              <span class="theme-toggle__label">Dark mode</span>
+            </button>
+          </div>
+        </nav>
+        <div class="tab-bar">
+          <a class="tab active" href="index.html">
+            <span class="tab-label">Home</span>
+            <span class="tab-close" aria-hidden="true">×</span>
+          </a>
+          <a class="tab" href="projects.html">
+            <span class="tab-label">Projects</span>
+            <span class="tab-close" aria-hidden="true">×</span>
+          </a>
+          <a class="tab" href="resume.html">
+            <span class="tab-label">Resume</span>
+            <span class="tab-close" aria-hidden="true">×</span>
+          </a>
+        </div>
+      </header>
+
+      <div class="layout">
+        <aside class="sidebar">
+          <div class="sidebar-card">
+            <div class="sidebar-title">Quest log</div>
+            <div class="xp">
+              <div class="xp-bar"><span data-xp-fill></span></div>
+              <div class="xp-label" data-xp-label>Level 1 · 0% to next</div>
+            </div>
+            <ul class="quest-list">
+              <li data-quest="explore">Explore every page</li>
+              <li data-quest="projects">Check the projects list</li>
+              <li data-quest="resume">Open the resume page</li>
+              <li data-quest="darkmode">Toggle dark mode</li>
+              <li data-quest="resume-download">Unlock resume download</li>
+            </ul>
+            <button class="quest-reset" type="button" data-reset-progress>
+              Reset progress
+            </button>
+          </div>
+          <div class="sidebar-card">
+            <div class="sidebar-title">Status</div>
+            <p class="sidebar-text">Available for internships, full-time roles, and collaborations.</p>
+          </div>
+          <div class="sidebar-card">
+            <div class="sidebar-title">Loadout</div>
+            <div class="loadout">
+              <button
+                class="loadout-item"
+                type="button"
+                data-tooltip="Joystick"
+                data-cursor="joystick"
+              >
+                🕹️
+              </button>
+              <button
+                class="loadout-item"
+                type="button"
+                data-tooltip="Controller"
+                data-cursor="controller"
+              >
+                🎮
+              </button>
+              <button
+                class="loadout-item"
+                type="button"
+                data-tooltip="Headset"
+                data-cursor="headset"
+              >
+                🎧
+              </button>
+            </div>
+          </div>
+        </aside>
+
+        <main>
+          <section class="hero">
+            <div class="noise reveal">
+            <h1 class="hero-title">Kairin Batrisyiah</h1>
+            <div class="hero-actions">
+              <a class="button primary" href="projects.html">View projects</a>
+              <a class="button secondary" href="resume.html">See resume</a>
+            </div>
+          </div>
+            <div class="highlight reveal">
+            <span class="tag">About me</span>
+            <h2 class="section-title">INTP (5w4) | Legal Student</h2>
+            <div class="code-block">
+              <p class="section-lede line-item">
+              I'm Kairin, a legal student at Temasek Polytechnic with a strong
+              interest in public policy and institutional design. I focus on
+              how legal frameworks shape real-world outcomes beyond doctrine,
+              and I value rigorous, structured thinking in every project.
+            </p>
+            </div>
+            <div class="card-grid">
+              <div class="card">
+                <span class="tag">Focus</span>
+                <h3>Public policy</h3>
+                <p>
+                  I interrogate how legal structures affect access,
+                  accountability, and real outcomes.
+                </p>
+              </div>
+              <div class="card">
+                <span class="tag">Focus</span>
+                <h3>Creativity + tech</h3>
+                <p>
+                  I explore how digital design and visual concepts can coexist
+                  with disciplined reasoning, and believe innovation can
+                  revolutionise societal paradigms.
+                </p>
+              </div>
+            </div>
+            <div class="desk-items" aria-label="Desk items">
+              <span class="desk-item" data-tooltip="Coffee break">☕</span>
+              <span class="desk-item" data-tooltip="Book stack">📚</span>
+              <span class="desk-item" data-tooltip="Pen notes">✒️</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="reveal">
+          <h2 class="section-title">Selected experience</h2>
+          <p class="section-lede">
+            Internships and roles that shaped my legal, administrative, and
+            client-facing foundation.
+          </p>
+          <div class="card-grid">
+            <a class="card" href="resume.html">
+              <span class="tag">Legal</span>
+              <h3>Legal intern</h3>
+              <p>
+                Assisted with legal research, drafting, and court documents
+                across multiple practice areas.
+              </p>
+            </a>
+            <a class="card" href="resume.html">
+              <span class="tag">Admin</span>
+              <h3>Administrative assistant</h3>
+              <p>
+                Supported legal research, documentation, and front-desk client
+                coordination at a law firm.
+              </p>
+            </a>
+            <a class="card" href="resume.html">
+              <span class="tag">Service</span>
+              <h3>Service crew</h3>
+              <p>
+                Built composure, de-escalation skills, and clear communication
+                through customer service work.
+              </p>
+            </a>
+          </div>
+        </section>
+
+        <section class="reveal">
+          <div class="highlight">
+            <h2 class="section-title">Let’s connect</h2>
+            <p class="section-lede">
+              Open to internships, full-time roles, and collaborations in law,
+              policy, and technology.
+            </p>
+            <a class="button primary" href="mailto:kairinbatrisyiah@gmail.com">
+              Email me
+            </a>
+          </div>
+        </section>
+        </main>
+      </div>
+
+      <footer class="footer">
+        <div>
+          <strong>Find me</strong>:
+          <a href="https://www.linkedin.com/in/kairin-batrisyiah/">LinkedIn</a>
+          · <a href="https://github.com/itskai1448">GitHub</a>
+        </div>
+        <div>Based in Singapore.</div>
+      </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
