@@ -492,6 +492,79 @@ body.theme-dark .tag {
   font-size: 0.85rem;
 }
 
+.avatar-card {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 12px;
+  align-items: center;
+}
+
+.avatar-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ffd3e6, #ff93c4);
+  display: grid;
+  place-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
+.avatar-name {
+  font-weight: 600;
+}
+
+.avatar-role {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.map {
+  display: grid;
+  gap: 8px;
+}
+
+.map-node {
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.3);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+.map-node.active {
+  border-color: #ff7ab6;
+  box-shadow: 0 0 0 2px rgba(255, 122, 182, 0.3);
+}
+
+.badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.badge {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.4;
+}
+
+.badge.unlocked {
+  opacity: 1;
+  background: rgba(255, 220, 235, 0.9);
+}
+
+.card.highlighted {
+  box-shadow: 0 0 0 2px rgba(255, 122, 182, 0.4);
+}
+
 .loadout {
   display: flex;
   gap: 10px;
@@ -578,6 +651,28 @@ body.cursor-mode .cursor-follower {
   transform: translateY(0);
 }
 
+.level-up {
+  position: fixed;
+  top: 18px;
+  right: 24px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: linear-gradient(120deg, #ff7ab6, #ffb3d4);
+  color: #1a0d12;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.level-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .sidebar-title {
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -640,6 +735,137 @@ body.cursor-mode .cursor-follower {
 .quest-list .quest-complete::before {
   content: "✔";
   color: #2ecc71;
+}
+
+.quest-reset,
+.reward-claim {
+  margin-top: 10px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.reward-status {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.event-pop {
+  position: fixed;
+  left: 24px;
+  bottom: 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 12px 14px;
+  display: grid;
+  gap: 8px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 4;
+  pointer-events: none;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+.event-pop.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.event-claim {
+  border: 1px solid var(--border);
+  background: rgba(255, 220, 235, 0.7);
+  border-radius: 10px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-family: var(--font-mono);
+}
+
+.mascot {
+  position: fixed;
+  left: 24px;
+  top: 120px;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 220, 235, 0.8);
+  border: 1px solid var(--border);
+  font-size: 28px;
+  z-index: 4;
+  transition: transform 0.2s ease;
+}
+
+.mascot.happy {
+  transform: translateY(-4px) scale(1.05);
+}
+
+.mascot.angry {
+  transform: translateY(4px) scale(0.95);
+}
+
+.skill-tree {
+  display: grid;
+  gap: 16px;
+}
+
+.skill-branch h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+}
+
+.skill-node {
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  margin-bottom: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.skill-node.unlocked {
+  opacity: 1;
+  background: rgba(255, 220, 235, 0.9);
+}
+
+.quiz-card {
+  display: grid;
+  gap: 12px;
+}
+
+.quiz-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.quiz-grid label {
+  display: grid;
+  gap: 6px;
+  font-size: 0.85rem;
+}
+
+.quiz-grid select {
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  font-family: var(--font-mono);
+}
+
+.quiz-result {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-muted);
 }
 
 .sidebar-text {

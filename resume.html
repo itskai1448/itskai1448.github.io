@@ -18,6 +18,14 @@
     <div class="pompom-sticker tertiary" aria-hidden="true"></div>
     <div class="cursor-follower" aria-hidden="true"></div>
     <div class="game-hud" data-game-hud aria-live="polite"></div>
+    <div class="level-up" data-level-up aria-live="polite">Level up!</div>
+    <div class="event-pop" data-event-pop aria-live="polite">
+      <div class="event-title">A wild bug appeared!</div>
+      <button class="event-claim" type="button" data-event-claim>
+        Squash bug + XP
+      </button>
+    </div>
+    <div class="mascot" data-mascot aria-label="Companion pet"></div>
     <div class="page">
       <header>
         <nav class="nav">
@@ -63,14 +71,45 @@
               <li data-quest="resume">Open the resume page</li>
               <li data-quest="darkmode">Toggle dark mode</li>
               <li data-quest="resume-download">Unlock resume download</li>
+              <li data-quest="bug-squash">Squash a wild bug</li>
+              <li data-quest="badge-day2">Return tomorrow</li>
+              <li data-quest="secret-theme">Unlock secret theme</li>
+              <li data-quest="classified">Unlock classified file</li>
             </ul>
             <button class="quest-reset" type="button" data-reset-progress>
               Reset progress
             </button>
           </div>
           <div class="sidebar-card">
+            <div class="sidebar-title">Daily reward</div>
+            <div class="reward-status" data-reward-status>
+              Day 1 · +10 XP
+            </div>
+            <button class="reward-claim" type="button" data-reward-claim>
+              Claim
+            </button>
+          </div>
+          <div class="sidebar-card">
+            <div class="sidebar-title">Character</div>
+            <div class="avatar-card">
+              <div class="avatar-circle">KB</div>
+              <div>
+                <div class="avatar-name">Kairin</div>
+                <div class="avatar-role">Legal Student</div>
+              </div>
+            </div>
+          </div>
+          <div class="sidebar-card">
             <div class="sidebar-title">Status</div>
             <p class="sidebar-text">Available for internships, full-time roles, and collaborations.</p>
+          </div>
+          <div class="sidebar-card">
+            <div class="sidebar-title">Map</div>
+            <div class="map">
+              <span class="map-node" data-map="home">Home</span>
+              <span class="map-node" data-map="projects">Projects</span>
+              <span class="map-node" data-map="resume">Resume</span>
+            </div>
           </div>
           <div class="sidebar-card">
             <div class="sidebar-title">Loadout</div>
@@ -99,6 +138,16 @@
               >
                 🎧
               </button>
+            </div>
+          </div>
+          <div class="sidebar-card">
+            <div class="sidebar-title">Badges</div>
+            <div class="badge-row">
+              <span class="badge" data-badge="explore">Explorer</span>
+              <span class="badge" data-badge="projects">Project Scout</span>
+              <span class="badge" data-badge="resume">Resume Raider</span>
+              <span class="badge" data-badge="darkmode">Night Owl</span>
+              <span class="badge" data-badge="resume-download">Gatekeeper</span>
             </div>
           </div>
         </aside>
@@ -258,37 +307,31 @@
 
         <section class="split reveal">
           <div>
-            <h2 class="section-title">Skills & tools</h2>
-            <div class="card-grid">
-              <div class="card">
-                <span class="tag">Technical</span>
-                <h3>Office + admin tools</h3>
-                <p>
-                  Microsoft 365, Google Workspace, LibreOffice, OneDrive,
-                  SharePoint, Dropbox.
-                </p>
+            <h2 class="section-title">Skill tree</h2>
+            <div class="skill-tree" data-skill-tree>
+              <div class="skill-branch">
+                <h3>Legal analysis</h3>
+                <div class="skill-node" data-skill="legal-1">Case research</div>
+                <div class="skill-node" data-skill="legal-2">Document drafting</div>
+                <div class="skill-node" data-skill="legal-3">Compliance review</div>
               </div>
-              <div class="card">
-                <span class="tag">Systems</span>
-                <h3>Platforms + software</h3>
-                <p>
-                  LawNet, Tessaract, Obsidian, Canva, Capcut, WordPress.
-                </p>
+              <div class="skill-branch">
+                <h3>Public policy</h3>
+                <div class="skill-node" data-skill="policy-1">Institutional design</div>
+                <div class="skill-node" data-skill="policy-2">Stakeholder mapping</div>
+                <div class="skill-node" data-skill="policy-3">Policy writing</div>
               </div>
-              <div class="card">
-                <span class="tag">Soft skills</span>
-                <h3>Professional strengths</h3>
-                <p>
-                  Attention to detail, time management, adaptability,
-                  problem-solving, clear communication.
-                </p>
+              <div class="skill-branch">
+                <h3>Communications</h3>
+                <div class="skill-node" data-skill="comms-1">Client coordination</div>
+                <div class="skill-node" data-skill="comms-2">Presentation design</div>
+                <div class="skill-node" data-skill="comms-3">Service recovery</div>
               </div>
-              <div class="card">
-                <span class="tag">Languages</span>
-                <h3>English, Malay, Mandarin</h3>
-                <p>
-                  English (professional), Malay (limited), Mandarin (basic).
-                </p>
+              <div class="skill-branch">
+                <h3>Production tools</h3>
+                <div class="skill-node" data-skill="tools-1">Microsoft 365</div>
+                <div class="skill-node" data-skill="tools-2">Google Workspace</div>
+                <div class="skill-node" data-skill="tools-3">Video editing</div>
               </div>
             </div>
           </div>

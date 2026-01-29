@@ -18,6 +18,14 @@
     <div class="pompom-sticker tertiary" aria-hidden="true"></div>
     <div class="cursor-follower" aria-hidden="true"></div>
     <div class="game-hud" data-game-hud aria-live="polite"></div>
+    <div class="level-up" data-level-up aria-live="polite">Level up!</div>
+    <div class="event-pop" data-event-pop aria-live="polite">
+      <div class="event-title">A wild bug appeared!</div>
+      <button class="event-claim" type="button" data-event-claim>
+        Squash bug + XP
+      </button>
+    </div>
+    <div class="mascot" data-mascot aria-label="Companion pet"></div>
     <div class="page">
       <header>
         <nav class="nav">
@@ -63,14 +71,45 @@
               <li data-quest="resume">Open the resume page</li>
               <li data-quest="darkmode">Toggle dark mode</li>
               <li data-quest="resume-download">Unlock resume download</li>
+              <li data-quest="bug-squash">Squash a wild bug</li>
+              <li data-quest="badge-day2">Return tomorrow</li>
+              <li data-quest="secret-theme">Unlock secret theme</li>
+              <li data-quest="classified">Unlock classified file</li>
             </ul>
             <button class="quest-reset" type="button" data-reset-progress>
               Reset progress
             </button>
           </div>
           <div class="sidebar-card">
+            <div class="sidebar-title">Daily reward</div>
+            <div class="reward-status" data-reward-status>
+              Day 1 · +10 XP
+            </div>
+            <button class="reward-claim" type="button" data-reward-claim>
+              Claim
+            </button>
+          </div>
+          <div class="sidebar-card">
+            <div class="sidebar-title">Character</div>
+            <div class="avatar-card">
+              <div class="avatar-circle">KB</div>
+              <div>
+                <div class="avatar-name">Kairin</div>
+                <div class="avatar-role">Legal Student</div>
+              </div>
+            </div>
+          </div>
+          <div class="sidebar-card">
             <div class="sidebar-title">Status</div>
             <p class="sidebar-text">Available for internships, full-time roles, and collaborations.</p>
+          </div>
+          <div class="sidebar-card">
+            <div class="sidebar-title">Map</div>
+            <div class="map">
+              <span class="map-node" data-map="home">Home</span>
+              <span class="map-node" data-map="projects">Projects</span>
+              <span class="map-node" data-map="resume">Resume</span>
+            </div>
           </div>
           <div class="sidebar-card">
             <div class="sidebar-title">Loadout</div>
@@ -101,6 +140,16 @@
               </button>
             </div>
           </div>
+          <div class="sidebar-card">
+            <div class="sidebar-title">Badges</div>
+            <div class="badge-row">
+              <span class="badge" data-badge="explore">Explorer</span>
+              <span class="badge" data-badge="projects">Project Scout</span>
+              <span class="badge" data-badge="resume">Resume Raider</span>
+              <span class="badge" data-badge="darkmode">Night Owl</span>
+              <span class="badge" data-badge="resume-download">Gatekeeper</span>
+            </div>
+          </div>
         </aside>
 
         <main>
@@ -121,7 +170,7 @@
         <section class="reveal">
           <h2 class="section-title">Featured work</h2>
           <div class="card-grid">
-            <article class="card">
+            <article class="card" data-project="web">
               <span class="tag">Portfolio</span>
               <h3>Personal portfolio website</h3>
               <p>
@@ -135,7 +184,7 @@
               </div>
               <p><strong>Outcome:</strong> Live portfolio.</p>
             </article>
-            <article class="card">
+            <article class="card" data-project="video">
               <span class="tag">Video</span>
               <h3>Event Space Highlights Reel (Video Edit)</h3>
               <p>
@@ -161,7 +210,7 @@
                 <span class="tag">Visual Storytelling</span>
               </div>
             </article>
-            <article class="card">
+            <article class="card" data-project="tool">
               <span class="tag">Planning</span>
               <h3>Upcoming project</h3>
               <p>
@@ -170,6 +219,43 @@
               </p>
               <p><strong>Outcome:</strong> In progress.</p>
             </article>
+          </div>
+        </section>
+
+        <section class="reveal">
+          <h2 class="section-title">Personality quiz</h2>
+          <div class="card quiz-card">
+            <div class="quiz-grid">
+              <label>
+                What role are you hiring for?
+                <select data-quiz-role>
+                  <option value="legal">Legal / Admin</option>
+                  <option value="policy">Policy / Research</option>
+                  <option value="creative">Creative / Media</option>
+                </select>
+              </label>
+              <label>
+                What do you care about most?
+                <select data-quiz-focus>
+                  <option value="execution">Execution</option>
+                  <option value="teamwork">Teamwork</option>
+                  <option value="creativity">Creativity</option>
+                  <option value="analysis">Analytical thinking</option>
+                </select>
+              </label>
+              <label>
+                How fast do you hire?
+                <select data-quiz-speed>
+                  <option value="fast">Fast</option>
+                  <option value="steady">Steady</option>
+                  <option value="careful">Careful</option>
+                </select>
+              </label>
+            </div>
+            <button class="button secondary" type="button" data-quiz-run>
+              Generate Kai build
+            </button>
+            <div class="quiz-result" data-quiz-result></div>
           </div>
         </section>
         </main>

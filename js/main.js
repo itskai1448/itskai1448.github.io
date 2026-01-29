@@ -11,6 +11,24 @@ const resetButton = document.querySelector("[data-reset-progress]");
 const loadoutItems = document.querySelectorAll("[data-cursor]");
 const cursorFollower = document.querySelector(".cursor-follower");
 const gameHud = document.querySelector("[data-game-hud]");
+const levelUp = document.querySelector("[data-level-up]");
+const mapNodes = document.querySelectorAll("[data-map]");
+const badges = document.querySelectorAll("[data-badge]");
+const lastPercentKey = "portfolio-last-percent";
+const rewardClaim = document.querySelector("[data-reward-claim]");
+const rewardStatus = document.querySelector("[data-reward-status]");
+const eventPop = document.querySelector("[data-event-pop]");
+const eventClaim = document.querySelector("[data-event-claim]");
+const mascot = document.querySelector("[data-mascot]");
+const quizRole = document.querySelector("[data-quiz-role]");
+const quizFocus = document.querySelector("[data-quiz-focus]");
+const quizSpeed = document.querySelector("[data-quiz-speed]");
+const quizRun = document.querySelector("[data-quiz-run]");
+const quizResult = document.querySelector("[data-quiz-result]");
+const projectCards = document.querySelectorAll("[data-project]");
+const skillNodes = document.querySelectorAll("[data-skill]");
+const loginKey = "portfolio-login-streak";
+const lastLoginKey = "portfolio-last-login";
 
 if ("IntersectionObserver" in window) {
   const observer = new IntersectionObserver(
@@ -111,7 +129,7 @@ const updateProgressUI = (progress) => {
     return;
   }
   const totalPages = 3;
-  const totalQuests = 5;
+  const totalQuests = 9;
   const visitedCount = progress.visited.length;
   const questCount = Object.values(progress.quests || {}).filter(Boolean).length;
   const totalSteps = totalPages + totalQuests;
@@ -129,6 +147,29 @@ const updateProgressUI = (progress) => {
 
     item.classList.toggle("quest-complete", isDone);
   });
+
+  if (badges.length > 0) {
+    badges.forEach((badge) => {
+      const key = badge.getAttribute("data-badge");
+      const unlocked =
+        (key === "explore" && visitedCount === totalPages) ||
+        (key === "projects" && progress.visited.includes("projects")) ||
+        (key === "resume" && progress.visited.includes("resume")) ||
+        progress.quests[key];
+      badge.classList.toggle("unlocked", unlocked);
+    });
+  }
+
+  const lastPercent = Number(window.localStorage.getItem(lastPercentKey) || 0);
+  if (percentage > lastPercent) {
+    window.localStorage.setItem(lastPercentKey, String(percentage));
+    if (levelUp) {
+      levelUp.classList.add("visible");
+      window.setTimeout(() => {
+        levelUp.classList.remove("visible");
+      }, 1200);
+    }
+  }
 };
 
 const markQuestDone = (key) => {
@@ -160,9 +201,19 @@ if (pageKey) {
   updateProgressUI(progress);
 }
 
+if (mapNodes.length > 0 && pageKey) {
+  mapNodes.forEach((node) => {
+    const key = node.getAttribute("data-map");
+    node.classList.toggle("active", key === pageKey);
+  });
+}
+
 if (resetButton) {
   resetButton.addEventListener("click", () => {
     window.localStorage.removeItem(progressKey);
+    window.localStorage.removeItem(lastPercentKey);
+    window.localStorage.removeItem(loginKey);
+    window.localStorage.removeItem(lastLoginKey);
     updateProgressUI({ visited: [], quests: {} });
     playSound("reset");
   });
@@ -210,6 +261,130 @@ document.addEventListener("keydown", (event) => {
     }
   }
 });
+
+const updateRewardUI = (streak) => {
+  if (!rewardStatus) {
+    return;
+  }
+  if (streak === 1) {
+    rewardStatus.textContent = "Day 1 · +10 XP";
+  } else if (streak === 2) {
+    rewardStatus.textContent = "Day 2 · Badge unlocked";
+  } else if (streak === 3) {
+    rewardStatus.textContent = "Day 3 · Secret theme unlocked";
+  } else if (streak >= 5) {
+    rewardStatus.textContent = "Day 5 · Classified file unlocked";
+  } else {
+    rewardStatus.textContent = `Day ${streak} · Keep the streak`;
+  }
+};
+
+const handleDailyLogin = () => {
+  const today = new Date().toDateString();
+  const lastLogin = window.localStorage.getItem(lastLoginKey);
+  let streak = Number(window.localStorage.getItem(loginKey) || 0);
+
+  if (lastLogin !== today) {
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+    if (lastLogin === yesterday.toDateString()) {
+      streak += 1;
+    } else {
+      streak = 1;
+    }
+    window.localStorage.setItem(loginKey, String(streak));
+    window.localStorage.setItem(lastLoginKey, today);
+  }
+
+  updateRewardUI(streak);
+  if (streak >= 2) {
+    markQuestDone("badge-day2");
+  }
+  if (streak >= 3) {
+    markQuestDone("secret-theme");
+  }
+  if (streak >= 5) {
+    markQuestDone("classified");
+  }
+};
+
+if (rewardClaim) {
+  rewardClaim.addEventListener("click", () => {
+    const streak = Number(window.localStorage.getItem(loginKey) || 1);
+    updateRewardUI(streak);
+    playSound("complete");
+  });
+}
+
+handleDailyLogin();
+
+if (eventPop && eventClaim) {
+  const showEvent = () => {
+    eventPop.classList.add("visible");
+  };
+  const hideEvent = () => {
+    eventPop.classList.remove("visible");
+  };
+  const delay = Math.floor(Math.random() * 120000) + 45000;
+  window.setTimeout(showEvent, delay);
+  eventClaim.addEventListener("click", () => {
+    markQuestDone("bug-squash");
+    playSound("complete");
+    hideEvent();
+  });
+}
+
+let idleTimer;
+const setMascotMood = (state) => {
+  if (!mascot) {
+    return;
+  }
+  mascot.classList.remove("happy", "angry");
+  if (state) {
+    mascot.classList.add(state);
+  }
+  mascot.textContent = state === "angry" ? "😾" : "🐱";
+};
+
+const resetIdle = () => {
+  window.clearTimeout(idleTimer);
+  setMascotMood("happy");
+  idleTimer = window.setTimeout(() => setMascotMood("angry"), 20000);
+};
+
+if (mascot) {
+  mascot.textContent = "🐱";
+  resetIdle();
+  ["mousemove", "keydown", "click"].forEach((evt) =>
+    document.addEventListener(evt, resetIdle)
+  );
+}
+
+if (quizRun && quizResult) {
+  quizRun.addEventListener("click", () => {
+    const role = quizRole?.value || "legal";
+    const focus = quizFocus?.value || "execution";
+    const speed = quizSpeed?.value || "steady";
+    const build = `${role} · ${focus} · ${speed}`;
+
+    quizResult.textContent = `Recommended Kai build: ${build}. Prioritized projects highlighted below.`;
+    projectCards.forEach((card) => {
+      const type = card.getAttribute("data-project");
+      card.classList.toggle("highlighted", role === "creative" && type === "video");
+      card.classList.toggle("highlighted", role !== "creative" && type !== "video");
+    });
+    playSound("complete");
+  });
+}
+
+if (skillNodes.length > 0) {
+  skillNodes.forEach((node) => {
+    node.addEventListener("click", () => {
+      node.classList.toggle("unlocked");
+      playSound("toggle");
+    });
+  });
+}
 
 const playSound = (type) => {
   if (!window.AudioContext && !window.webkitAudioContext) {
