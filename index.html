@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20260714-3">
+  <link rel="stylesheet" href="css/style.css?v=20260714-4">
 </head>
 <body data-page="home">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -28,17 +28,11 @@
 
   <main id="main">
     <section class="music-hero reveal">
-      <div class="hero-room" aria-hidden="true">
-        <div class="window-glow"></div>
-        <div class="shelf shelf-one"></div>
-        <div class="shelf shelf-two"></div>
-        <div class="jukebox"><i></i><span>K</span></div>
-        <div class="speaker"><i></i><i></i></div>
-      </div>
+      <div class="hero-room realistic-room" aria-hidden="true"></div>
       <div class="hero-content">
         <p class="kicker">Kairin's personal library</p>
         <h1>Hi, I am Kairin.<br><span>I study rules and the people living with them.</span></h1>
-        <p class="hero-copy">Legal student, policy nerd, chronic overthinker and collector of questions that begin with “but why does the system work like that?”</p>
+        <p class="hero-copy">I am a legal student with hands-on experience in legal operations and a growing research interest in family policy, privacy regulation, commercial law and access to justice.</p>
         <div class="hero-actions">
           <a class="apple-button" href="#library">Browse my library</a>
           <a class="round-button" href="resume.html" aria-label="View my résumé">↗</a>
@@ -50,8 +44,10 @@
     <section class="library-section reveal" id="library">
       <div class="library-heading">
         <div><p class="kicker pink">My record shelf</p><h2>Choose a record</h2></div>
-        <p>Every pressing opens a different part of me. Yes, some of them are dramatic. Look at who made the website.</p>
+        <p>Each record contains an area I have worked in, studied or want to investigate more seriously. Select one to read the liner notes.</p>
       </div>
+
+      <figure class="vinyl-still-life"><img src="assets/translucent-vinyl-collection.webp" alt="Five translucent coloured records numbered 01 to 05 on a dark wooden table"><figcaption>Five interests, pressed in colour. The records below are interactive.</figcaption></figure>
 
       <div class="record-browser" data-record-browser>
         <button class="record-choice selected" type="button" data-album="policy" data-title="Policy, but make it practical" data-subtitle="Public policy and institutional design" style="--vinyl:#ef3f71;--vinyl2:#ffb2ca">
@@ -78,13 +74,14 @@
           <h3 data-liner-title>Policy, but make it practical</h3>
           <p class="liner-subtitle" data-liner-subtitle>Public policy and institutional design</p>
           <div class="liner-text active" data-panel="policy">
-            <p>I am interested in public policy because rules do not land equally on everyone. A scheme can look complete on paper and still be difficult to understand, access or use.</p>
-            <p>My community work made that gap much harder to ignore. I want to learn how policy is researched, designed, communicated and reviewed, especially in social policy, family support and access to justice.</p>
-            <div class="looking-for"><b>Currently looking for</b><span>Public policy internships</span><span>Research assistant opportunities</span><span>Advocacy and think tank projects</span></div>
+            <p>I am interested in the point where a policy leaves the briefing paper and reaches the person expected to use it. Through ComLink+ and community work, I have become more attentive to the barriers created by language, administrative complexity, housing, caregiving and limited resources.</p>
+            <p>I want to study whether programmes achieve their intended outcomes, how implementation gaps are identified and how feedback from affected communities reaches decision-makers.</p>
+            <div class="research-questions"><b>Questions I want to investigate</b><ul><li>How accessible are family and social-support schemes in practice?</li><li>How should programme outcomes be measured beyond participation numbers?</li><li>Where do legal entitlement, policy design and frontline delivery diverge?</li></ul></div>
+            <div class="looking-for"><b>Currently looking for</b><span>Policy research internships</span><span>Research assistant roles</span><span>Programme evaluation</span><span>Think-tank projects</span></div>
           </div>
-          <div class="liner-text" data-panel="family"><p>Family law interests me because legal problems rarely arrive alone. They come with money, housing, caregiving, fear and relationships that still have to continue after the file closes.</p><p>I want to understand how the law can protect vulnerable family members while remaining practical for the people expected to navigate it.</p></div>
-          <div class="liner-text" data-panel="commercial"><p>I enjoy commercial law because it reveals the machinery behind everyday business. Contracts, risk, payment, procedure and documentation all have to move together.</p><p>Working in small legal teams taught me how much good legal work depends on accurate operations, clear records and people who notice what is missing.</p></div>
-          <div class="liner-text" data-panel="technology"><p>I like testing where law and technology can genuinely help each other. My GDPR and PDPA project asks how the same privacy wording can lead to different legal conclusions across jurisdictions.</p><p>I also build digital things because design can make dense information feel less hostile. This website is one of those experiments.</p></div>
+          <div class="liner-text" data-panel="family"><p>Family law interests me because a legal problem can involve safety, housing, caregiving, maintenance and relationships that continue after the proceedings end. My interest developed through family-law studies, exposure to matrimonial matters in practice, community work with families and helping a relative understand Syariah maintenance issues.</p><p>I want to understand how family justice can remain procedurally fair while being usable by self-represented persons and responsive to financial abuse, coercive control and caregiving realities.</p><div class="research-questions"><b>Questions I care about</b><ul><li>How accessible are family justice processes without legal representation?</li><li>How do maintenance, housing and caregiving policies interact?</li><li>What makes a legal remedy practically usable?</li></ul></div></div>
+          <div class="liner-text" data-panel="commercial"><p>Commercial law interests me because it connects legal reasoning with the machinery of an organisation. In practice, I have seen how contracts, invoices, payment obligations, corporate records, regulatory requirements and dispute risk depend on accurate information moving between people.</p><p>My work has included supporting corporate and commercial matters, preparing documents and correspondence, handling billing and payment tracking, and coordinating with lawyers, banks, accountants, clients and government bodies.</p><div class="research-questions"><b>What I want to develop</b><ul><li>Contract review and commercial drafting</li><li>Corporate governance and regulatory compliance</li><li>Preventive legal operations before disputes arise</li></ul></div></div>
+          <div class="liner-text" data-panel="technology"><p>Privacy law interests me because compliance is rarely a simple checklist. In my GDPR and PDPA project, I compare how identical policy wording can produce different conclusions under two regulatory systems.</p><p>The work examines consent and other legal bases, controller and processor roles, data intermediaries, purpose limitation, retention and cross-border transfers. My contribution includes comparative legal research, compliance logic, ambiguity mapping and product direction.</p><div class="research-questions"><b>Next questions</b><ul><li>When should an automated tool flag ambiguity instead of declaring non-compliance?</li><li>How can privacy advice remain legally accurate and understandable?</li><li>How do regulatory differences affect cross-border services?</li></ul></div></div>
           <div class="liner-text" data-panel="personal"><p>Outside law, I collect old songs, learn electric guitar, build unnecessarily elaborate digital projects and analyse almost everything. Michael Jackson, the Eagles, Bryan Adams and Bring Me The Horizon can all appear in the same queue.</p><p>I am introverted, curious and happiest in conversations where both people leave with a new question.</p></div>
           <div class="album-controls"><button type="button" data-prev-record aria-label="Previous record">◀</button><button class="play-album" type="button" data-spin-record aria-label="Spin selected record">▶</button><button type="button" data-next-record aria-label="Next record">▶</button></div>
         </div>
@@ -100,9 +97,30 @@
       </div>
     </section>
 
+    <section class="practice-library reveal">
+      <div class="section-top"><div><p class="kicker pink">Legal practice</p><h2>Work I have actually handled</h2></div><p class="section-note">Not a list of personality traits. These are the workflows, documents and systems I have worked with.</p></div>
+      <div class="practice-grid">
+        <article><span class="practice-number">01</span><h3>Litigation and enforcement</h3><p>Supported civil litigation and enforcement workflows through document preparation, eLitigation filing support, procedural tracking, sheriff and bailiff matters, factual chronologies and client updates.</p><div class="tag-row"><span>eLitigation</span><span>Court documents</span><span>Enforcement</span></div></article>
+        <article><span class="practice-number">02</span><h3>Corporate and commercial support</h3><p>Prepared and organised commercial documents, correspondence and matter records. Coordinated payment, billing and regulatory workflows involving clients, lawyers, accountants, banks, ACRA and IRAS.</p><div class="tag-row"><span>Commercial matters</span><span>Billing</span><span>Compliance</span></div></article>
+        <article><span class="practice-number">03</span><h3>Notarial and document work</h3><p>Coordinated commissioning, notarial and SAL legalisation matters, including document preparation, execution arrangements, client liaison and careful handling of original documents.</p><div class="tag-row"><span>Notarial</span><span>Commissioning</span><span>SAL</span></div></article>
+        <article><span class="practice-number">04</span><h3>Legal operations</h3><p>Maintained matter records and document repositories, tracked payments and deadlines, supported interns and connected legal work with the daily administrative systems needed to keep a small practice moving.</p><div class="tag-row"><span>NetDocuments</span><span>CoreMatter</span><span>Tessaract</span></div></article>
+      </div>
+    </section>
+
+    <section class="policy-map reveal">
+      <div class="policy-intro"><p class="kicker pink">Policy and research</p><h2>The work I want to move towards</h2><p>I am not looking for a policy internship simply because “policy” sounds interesting. I want research roles where I can examine how legal rules and public programmes behave after implementation, especially for people navigating financial, informational or institutional barriers.</p></div>
+      <div class="policy-columns">
+        <article><span>Priority 01</span><h3>Family and social policy</h3><p>Family support, rental housing, caregiving, social mobility and the accessibility of schemes intended for vulnerable households.</p></article>
+        <article><span>Priority 02</span><h3>Access to justice</h3><p>Whether people can understand, afford and practically use legal processes, particularly in family and employment-related matters.</p></article>
+        <article><span>Priority 03</span><h3>Labour and migrant-worker policy</h3><p>Wage protection, employment rights, legal assistance and the position of lower-wage migrant workers within Singapore's labour system.</p></article>
+        <article><span>Priority 04</span><h3>Digital regulation and privacy</h3><p>PDPA, GDPR, cross-border data governance and the consequences of regulatory differences for organisations and individuals.</p></article>
+      </div>
+      <div class="methods-strip"><div><b>Research work I want to learn and contribute to</b></div><span>Literature reviews</span><span>Legislative research</span><span>Comparative policy analysis</span><span>Qualitative interviews</span><span>Case studies</span><span>Programme evaluation</span></div>
+    </section>
+
     <section class="opportunity-card reveal">
-      <div><p class="kicker">On repeat lately</p><h2>I am looking for work that lets me ask better questions.</h2></div>
-      <div><p>I am especially interested in internships or project work involving public policy, social research, legal research, family support, commercial law, privacy or advocacy.</p><p>I can bring hands-on legal operations experience, strong research instincts, detailed document work and a slightly alarming willingness to organise messy information.</p><div class="hero-actions"><a class="apple-button light" href="mailto:kairinbatrisyiah@gmail.com">Email me</a><a class="apple-button outline" href="resume.html">Read my résumé</a></div></div>
+      <div><p class="kicker">Currently looking for</p><h2>A place to turn practical experience into stronger research.</h2></div>
+      <div><p>I am seeking public policy internships, research assistant roles, think-tank projects, legal research work and advocacy opportunities. I am particularly interested in social policy, family justice, labour and migrant-worker issues, privacy regulation and access to justice.</p><p>I can contribute legal and statutory research, document review, factual summaries, chronology preparation, comparative analysis, detailed record management and hands-on knowledge of legal operations. I want to develop further in policy evaluation, qualitative research and evidence-based writing.</p><div class="hero-actions"><a class="apple-button light" href="mailto:kairinbatrisyiah@gmail.com">Email me</a><a class="apple-button outline" href="resume.html">Read my résumé</a></div></div>
     </section>
   </main>
 
