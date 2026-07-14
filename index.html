@@ -3,104 +3,118 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Kairin Batrisyiah — legal executive, legal student and policy-minded builder in Singapore.">
-  <title>Kairin Batrisyiah — Side A</title>
+  <meta name="description" content="The personal portfolio of Kairin Batrisyiah, a legal student interested in public policy, family law, commercial law and legal technology.">
+  <title>Kairin's Library</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="home">
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="grain" aria-hidden="true"></div>
+  <div class="ambient-light" aria-hidden="true"></div>
+  <div class="stars" aria-hidden="true"></div>
+
   <header class="site-header">
-    <a class="wordmark" href="index.html" aria-label="Kairin, home">KAI<span>RIN</span><small>STEREO</small></a>
+    <a class="wordmark" href="index.html"><span class="wordmark-note">♪</span> Kairin</a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
-    <nav id="site-nav" aria-label="Primary navigation">
-      <a class="active" href="index.html"><span>01</span> Side A</a>
-      <a href="projects.html"><span>02</span> The Archive</a>
-      <a href="resume.html"><span>03</span> Tracklist</a>
+    <nav id="site-nav" aria-label="Main navigation">
+      <a class="active" href="index.html">Listen Now</a>
+      <a href="projects.html">Projects</a>
+      <a href="resume.html">My Track Record</a>
     </nav>
-    <button class="sound-toggle" type="button" data-sound aria-pressed="false">Sound: off</button>
+    <a class="profile-dot" href="mailto:kairinbatrisyiah@gmail.com" aria-label="Email Kairin">KB</a>
   </header>
 
   <main id="main">
-    <section class="hero shell">
-      <div class="hero-copy reveal">
-        <p class="eyebrow">Legal · Policy · Technology / Singapore</p>
-        <h1>I read the <em>fine print</em>.<br>I question the system.</h1>
-        <p class="hero-lede">I’m Kairin — a legal executive and legal student interested in what happens when law leaves the page and meets real people, institutions and technology.</p>
-        <div class="button-row">
-          <a class="button primary" href="projects.html">Enter the archive <span>↗</span></a>
-          <a class="button ghost" href="resume.html">View track record</a>
+    <section class="music-hero reveal">
+      <div class="hero-room" aria-hidden="true">
+        <div class="window-glow"></div>
+        <div class="shelf shelf-one"></div>
+        <div class="shelf shelf-two"></div>
+        <div class="jukebox"><i></i><span>K</span></div>
+        <div class="speaker"><i></i><i></i></div>
+      </div>
+      <div class="hero-content">
+        <p class="kicker">Kairin's personal library</p>
+        <h1>Hi, I am Kairin.<br><span>I study rules and the people living with them.</span></h1>
+        <p class="hero-copy">Legal student, policy nerd, chronic overthinker and collector of questions that begin with “but why does the system work like that?”</p>
+        <div class="hero-actions">
+          <a class="apple-button" href="#library">Browse my library</a>
+          <a class="round-button" href="resume.html" aria-label="View my résumé">↗</a>
         </div>
-        <div class="availability"><i></i> Open to legal, policy and research opportunities</div>
+      </div>
+      <div class="equaliser" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    </section>
+
+    <section class="library-section reveal" id="library">
+      <div class="library-heading">
+        <div><p class="kicker pink">My record shelf</p><h2>Choose a record</h2></div>
+        <p>Every pressing opens a different part of me. Yes, some of them are dramatic. Look at who made the website.</p>
       </div>
 
-      <div class="turntable reveal" aria-label="Interactive record player">
-        <div class="turntable-top">
-          <span>KBS–1004</span><span>33⅓ RPM</span>
-        </div>
-        <button class="record" type="button" data-record aria-label="Play or pause record">
-          <span class="record-groove"></span>
-          <span class="record-label"><b>Kairin</b><small>SIDE A</small><small>THE INTRO</small></span>
+      <div class="record-browser" data-record-browser>
+        <button class="record-choice selected" type="button" data-album="policy" data-title="Policy, but make it practical" data-subtitle="Public policy and institutional design" style="--vinyl:#ef3f71;--vinyl2:#ffb2ca">
+          <span class="vinyl translucent"><i><b>01</b></i></span><strong>Policy, but make it practical</strong><small>Pink translucent pressing</small>
         </button>
-        <div class="tonearm" aria-hidden="true"><span></span></div>
-        <div class="player-display"><span data-player-state>READY</span><span>00:00</span></div>
-        <p class="player-hint">Press the record to play</p>
+        <button class="record-choice" type="button" data-album="family" data-title="The human file" data-subtitle="Family law and access to support" style="--vinyl:#8c6bff;--vinyl2:#cfc2ff">
+          <span class="vinyl translucent splatter"><i><b>02</b></i></span><strong>The human file</strong><small>Violet splatter pressing</small>
+        </button>
+        <button class="record-choice" type="button" data-album="commercial" data-title="How things move" data-subtitle="Commercial law and legal operations" style="--vinyl:#35c6b1;--vinyl2:#a6f8ea">
+          <span class="vinyl translucent"><i><b>03</b></i></span><strong>How things move</strong><small>Sea glass pressing</small>
+        </button>
+        <button class="record-choice" type="button" data-album="technology" data-title="Law meets the machine" data-subtitle="Privacy, technology and creative tools" style="--vinyl:#ff8a32;--vinyl2:#ffd09b">
+          <span class="vinyl translucent splatter"><i><b>04</b></i></span><strong>Law meets the machine</strong><small>Amber splatter pressing</small>
+        </button>
+        <button class="record-choice" type="button" data-album="personal" data-title="After hours" data-subtitle="Music, ideas and the things I love" style="--vinyl:#2778ff;--vinyl2:#9fc1ff">
+          <span class="vinyl translucent"><i><b>05</b></i></span><strong>After hours</strong><small>Electric blue pressing</small>
+        </button>
       </div>
-    </section>
 
-    <section class="manifesto shell reveal">
-      <div class="section-number">A / 01</div>
-      <div>
-        <p class="eyebrow coral">Now playing — About</p>
-        <h2>Structured thinking.<br><span>Human consequences.</span></h2>
-      </div>
-      <div class="manifesto-copy">
-        <p>My route into law began unexpectedly through an HR internship. What held my attention was not doctrine alone, but the way rules distribute access, power and accountability.</p>
-        <p>Today, I combine hands-on legal operations experience with an interest in public policy, institutional design and privacy compliance. I like difficult questions, orderly systems and finding the missing connection between A and D.</p>
-        <div class="identity-tags"><span>INTP 5w4</span><span>Legal student</span><span>Policy curious</span><span>Builder</span></div>
-      </div>
-    </section>
-
-    <section class="channels shell reveal">
-      <div class="section-heading">
-        <div><p class="eyebrow">Four-channel audio</p><h2>What I bring to the mix</h2></div>
-        <p>One practice, four connected ways of working.</p>
-      </div>
-      <div class="channel-grid">
-        <article><span class="dial">01</span><h3>Legal operations</h3><p>Documents, filings, matter records and stakeholder workflows handled with accuracy and calm.</p></article>
-        <article><span class="dial">02</span><h3>Research & analysis</h3><p>Turning legislation, facts and ambiguity into structured, usable findings.</p></article>
-        <article><span class="dial">03</span><h3>Policy perspective</h3><p>Looking beyond formal rules to implementation, access and lived outcomes.</p></article>
-        <article><span class="dial">04</span><h3>Creative technology</h3><p>Building digital tools and visual systems that make complex material easier to navigate.</p></article>
-      </div>
-    </section>
-
-    <section class="featured shell reveal">
-      <div class="section-heading">
-        <div><p class="eyebrow coral">Selected release</p><h2>From the archive</h2></div>
-        <a class="text-link" href="projects.html">Browse all work →</a>
-      </div>
-      <a class="album-feature" href="projects.html#privacy">
-        <div class="album-art"><span>GDPR</span><i>×</i><span>PDPA</span><small>01 / CROSS-JURISDICTIONAL STUDY</small></div>
-        <div class="album-notes">
-          <p class="eyebrow">Legal tech · Privacy · 2026</p>
-          <h3>Cross-Jurisdictional Privacy Compliance Analyzer</h3>
-          <p>A collaborative prototype examining why the same privacy policy can produce different compliance outcomes under the EU GDPR and Singapore PDPA.</p>
-          <ul><li>Comparative legal analysis</li><li>Compliance ambiguity mapping</li><li>Tool and workflow design</li></ul>
-          <span class="button ghost">Read the liner notes ↗</span>
+      <div class="liner-player">
+        <div class="liner-art"><div class="large-vinyl" data-large-vinyl style="--vinyl:#ef3f71;--vinyl2:#ffb2ca"><i></i></div><div class="tone-arm"></div></div>
+        <div class="liner-copy">
+          <p class="kicker" data-liner-number>Record 01</p>
+          <h3 data-liner-title>Policy, but make it practical</h3>
+          <p class="liner-subtitle" data-liner-subtitle>Public policy and institutional design</p>
+          <div class="liner-text active" data-panel="policy">
+            <p>I am interested in public policy because rules do not land equally on everyone. A scheme can look complete on paper and still be difficult to understand, access or use.</p>
+            <p>My community work made that gap much harder to ignore. I want to learn how policy is researched, designed, communicated and reviewed, especially in social policy, family support and access to justice.</p>
+            <div class="looking-for"><b>Currently looking for</b><span>Public policy internships</span><span>Research assistant opportunities</span><span>Advocacy and think tank projects</span></div>
+          </div>
+          <div class="liner-text" data-panel="family"><p>Family law interests me because legal problems rarely arrive alone. They come with money, housing, caregiving, fear and relationships that still have to continue after the file closes.</p><p>I want to understand how the law can protect vulnerable family members while remaining practical for the people expected to navigate it.</p></div>
+          <div class="liner-text" data-panel="commercial"><p>I enjoy commercial law because it reveals the machinery behind everyday business. Contracts, risk, payment, procedure and documentation all have to move together.</p><p>Working in small legal teams taught me how much good legal work depends on accurate operations, clear records and people who notice what is missing.</p></div>
+          <div class="liner-text" data-panel="technology"><p>I like testing where law and technology can genuinely help each other. My GDPR and PDPA project asks how the same privacy wording can lead to different legal conclusions across jurisdictions.</p><p>I also build digital things because design can make dense information feel less hostile. This website is one of those experiments.</p></div>
+          <div class="liner-text" data-panel="personal"><p>Outside law, I collect old songs, learn electric guitar, build unnecessarily elaborate digital projects and analyse almost everything. Michael Jackson, the Eagles, Bryan Adams and Bring Me The Horizon can all appear in the same queue.</p><p>I am introverted, curious and happiest in conversations where both people leave with a new question.</p></div>
+          <div class="album-controls"><button type="button" data-prev-record aria-label="Previous record">◀</button><button class="play-album" type="button" data-spin-record aria-label="Spin selected record">▶</button><button type="button" data-next-record aria-label="Next record">▶</button></div>
         </div>
-      </a>
+      </div>
     </section>
 
-    <section class="contact shell reveal">
-      <div class="cassette" aria-hidden="true"><div class="cassette-label"><b>LET’S TALK</b><span>60</span><small>KBS / PERSONAL RECORDING</small></div><div class="cassette-window"><i></i><i></i></div></div>
-      <div><p class="eyebrow">End of Side A</p><h2>Have a difficult question?<br><span>Good. Send it over.</span></h2><p>I’m open to opportunities and collaborations across legal work, policy research, compliance and technology.</p><div class="button-row"><a class="button primary" href="mailto:kairinbatrisyiah@gmail.com">Email me ↗</a><a class="button ghost" href="https://www.linkedin.com/in/kairin-batrisyiah/">LinkedIn</a></div></div>
+    <section class="made-for-you reveal">
+      <div class="section-top"><div><p class="kicker pink">Made for you</p><h2>Start here</h2></div><a href="projects.html">See all projects</a></div>
+      <div class="playlist-grid">
+        <a class="playlist-card privacy-card" href="projects.html#privacy"><span class="playlist-art"><b>GDPR<br>×<br>PDPA</b></span><h3>Privacy, interpreted</h3><p>A cross-jurisdictional compliance project</p></a>
+        <a class="playlist-card community-card" href="resume.html#community"><span class="playlist-art"><b>FIELD<br>NOTES</b></span><h3>Policy on the ground</h3><p>MSF ComLink+, MPS and Pro Bono SG</p></a>
+        <a class="playlist-card work-card" href="resume.html"><span class="playlist-art"><b>LEGAL<br>OPS</b></span><h3>My track record</h3><p>Legal, administrative and research experience</p></a>
+      </div>
+    </section>
+
+    <section class="opportunity-card reveal">
+      <div><p class="kicker">On repeat lately</p><h2>I am looking for work that lets me ask better questions.</h2></div>
+      <div><p>I am especially interested in internships or project work involving public policy, social research, legal research, family support, commercial law, privacy or advocacy.</p><p>I can bring hands-on legal operations experience, strong research instincts, detailed document work and a slightly alarming willingness to organise messy information.</p><div class="hero-actions"><a class="apple-button light" href="mailto:kairinbatrisyiah@gmail.com">Email me</a><a class="apple-button outline" href="resume.html">Read my résumé</a></div></div>
     </section>
   </main>
 
-  <footer><div class="shell"><span>© 2026 Kairin Batrisyiah</span><span>Designed with rhythm, reason & too much coffee.</span><a href="#main">Rewind ↑</a></div></footer>
+  <aside class="now-playing" aria-label="Now playing">
+    <div class="track-cover"><span>THRILLER</span><i>♪</i></div>
+    <div class="track-info"><strong>Human Nature</strong><span>Michael Jackson</span></div>
+    <div class="track-progress"><i></i></div>
+    <a class="player-play" href="https://music.apple.com/us/song/human-nature/269573405" target="_blank" rel="noreferrer" aria-label="Play Human Nature on Apple Music">▶</a>
+    <a class="player-next" href="https://music.apple.com/us/album/thriller/269572838" target="_blank" rel="noreferrer" aria-label="Open Thriller on Apple Music">▶▶</a>
+  </aside>
+
+  <footer><span>Made by Kairin in Singapore</span><span>Best experienced with headphones and curiosity</span><a href="#main">Back to top ↑</a></footer>
   <div class="toast" data-toast aria-live="polite"></div>
   <script src="js/main.js"></script>
 </body>

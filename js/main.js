@@ -1,47 +1,12 @@
 const menuButton = document.querySelector('.menu-toggle');
 const nav = document.querySelector('#site-nav');
-const soundButton = document.querySelector('[data-sound]');
-const record = document.querySelector('[data-record]');
-const playerState = document.querySelector('[data-player-state]');
 const toast = document.querySelector('[data-toast]');
-let soundOn = false;
 
 menuButton?.addEventListener('click', () => {
   const open = nav.classList.toggle('open');
   menuButton.setAttribute('aria-expanded', String(open));
   menuButton.textContent = open ? 'Close' : 'Menu';
 });
-
-function beep(frequency = 520, duration = .07) {
-  if (!soundOn || !window.AudioContext) return;
-  const context = new AudioContext();
-  const oscillator = context.createOscillator();
-  const gain = context.createGain();
-  oscillator.type = 'sine';
-  oscillator.frequency.value = frequency;
-  gain.gain.setValueAtTime(.045, context.currentTime);
-  gain.gain.exponentialRampToValueAtTime(.001, context.currentTime + duration);
-  oscillator.connect(gain).connect(context.destination);
-  oscillator.start();
-  oscillator.stop(context.currentTime + duration);
-  oscillator.onended = () => context.close();
-}
-
-soundButton?.addEventListener('click', () => {
-  soundOn = !soundOn;
-  soundButton.textContent = 'Sound: ' + (soundOn ? 'on' : 'off');
-  soundButton.setAttribute('aria-pressed', String(soundOn));
-  beep(620, .1);
-});
-
-record?.addEventListener('click', () => {
-  const playing = record.classList.toggle('playing');
-  playerState.textContent = playing ? 'PLAYING' : 'PAUSED';
-  record.setAttribute('aria-label', playing ? 'Pause record' : 'Play record');
-  beep(playing ? 660 : 330, .12);
-});
-
-document.querySelectorAll('a, button').forEach((item) => item.addEventListener('pointerenter', () => beep(440, .035)));
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
@@ -53,22 +18,6 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: .08 });
 document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
 
-document.querySelectorAll('[data-filter]').forEach((button) => {
-  button.addEventListener('click', () => {
-    const category = button.dataset.filter;
-    document.querySelectorAll('[data-filter]').forEach((item) => item.classList.remove('active'));
-    button.classList.add('active');
-    document.querySelectorAll('[data-category]').forEach((card) => {
-      const categories = card.dataset.category.split(' ');
-      const shouldHide = category !== 'all' && !categories.includes(category);
-      card.classList.toggle('is-hidden', shouldHide);
-      card.hidden = shouldHide;
-    });
-    showToast(category === 'all' ? 'All releases loaded' : button.textContent + ' shelf loaded');
-    beep(700, .08);
-  });
-});
-
 function showToast(message) {
   if (!toast) return;
   toast.textContent = message;
@@ -76,4 +25,52 @@ function showToast(message) {
   window.setTimeout(() => toast.classList.remove('show'), 1800);
 }
 
-document.querySelector('[data-download]')?.addEventListener('click', () => showToast('Resume unlocked — no trivia required'));
+const recordChoices = [...document.querySelectorAll('.record-choice')];
+const largeVinyl = document.querySelector('[data-large-vinyl]');
+const linerTitle = document.querySelector('[data-liner-title]');
+const linerSubtitle = document.querySelector('[data-liner-subtitle]');
+const linerNumber = document.querySelector('[data-liner-number]');
+let currentRecord = 0;
+
+function selectRecord(index) {
+  if (!recordChoices.length) return;
+  currentRecord = (index + recordChoices.length) % recordChoices.length;
+  const choice = recordChoices[currentRecord];
+  const vinyl = choice.querySelector('.vinyl');
+  recordChoices.forEach((item) => item.classList.remove('selected'));
+  choice.classList.add('selected');
+  linerTitle.textContent = choice.dataset.title;
+  linerSubtitle.textContent = choice.dataset.subtitle;
+  linerNumber.textContent = 'Record ' + String(currentRecord + 1).padStart(2, '0');
+  largeVinyl.style.setProperty('--vinyl', choice.style.getPropertyValue('--vinyl'));
+  largeVinyl.style.setProperty('--vinyl2', choice.style.getPropertyValue('--vinyl2'));
+  largeVinyl.classList.toggle('splatter', vinyl.classList.contains('splatter'));
+  document.querySelectorAll('[data-panel]').forEach((panel) => {
+    panel.classList.toggle('active', panel.dataset.panel === choice.dataset.album);
+  });
+  choice.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+  largeVinyl.classList.remove('spinning');
+}
+
+recordChoices.forEach((choice, index) => choice.addEventListener('click', () => selectRecord(index)));
+document.querySelector('[data-prev-record]')?.addEventListener('click', () => selectRecord(currentRecord - 1));
+document.querySelector('[data-next-record]')?.addEventListener('click', () => selectRecord(currentRecord + 1));
+document.querySelector('[data-spin-record]')?.addEventListener('click', (event) => {
+  const spinning = largeVinyl.classList.toggle('spinning');
+  event.currentTarget.textContent = spinning ? 'Ⅱ' : '▶';
+  showToast(spinning ? 'Record spinning' : 'Record paused');
+});
+
+document.querySelectorAll('[data-filter]').forEach((button) => {
+  button.addEventListener('click', () => {
+    const category = button.dataset.filter;
+    document.querySelectorAll('[data-filter]').forEach((item) => item.classList.remove('active'));
+    button.classList.add('active');
+    document.querySelectorAll('[data-category]').forEach((card) => {
+      const categories = card.dataset.category.split(' ');
+      card.hidden = category !== 'all' && !categories.includes(category);
+    });
+  });
+});
+
+document.querySelector('[data-download]')?.addEventListener('click', () => showToast('Résumé downloading'));
