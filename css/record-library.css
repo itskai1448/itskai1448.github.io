@@ -1,38 +1,17 @@
-:root {
-  --script: "Mrs Saint Delafield", "Snell Roundhand", cursive;
-  --sans: var(--script);
-  --display: var(--script);
-  --mono: var(--script);
-  --pink: #ff529c;
-  --black: #100b10;
-}
-body {background:var(--black);color:#fff1ed;font:1.2rem/1.55 var(--script)}
-body :is(h1,h2,h3,h4,p,a,button,span,strong,small,b,li,dt,dd,label,summary,figcaption) {font-family:var(--script);letter-spacing:normal}
-.wordmark, .music-hero h1, .track-heading h2 {color:var(--pink)}
-.site-header {background:#110c12f5;border-bottom:1px solid #74304f}
-.apple-button,.button.primary {background:#ff69a7;color:#210914}
-.music-hero {isolation:isolate;background:radial-gradient(ellipse at 83% 59%,#351528,transparent 55%),#0d0a0f}
-.music-hero .realistic-room {display:none}
-.music-hero .hero-content {width:49%;max-width:720px}
-.music-hero h1 {font-size:clamp(3rem,5.5vw,6rem);line-height:1.08}
-.music-hero h1 span {color:#ffe4e7}
-.sleeve-poster {position:absolute;right:7%;width:35%;aspect-ratio:0.94;transform:rotate(3deg);border:5px solid #e8d6b9;background:linear-gradient(125deg,transparent 45%,#ffeac6 45% 64%,transparent 64%),#2143a3;box-shadow:17px 12px 0 #07070a}
-.sleeve-poster:before {content:"";position:absolute;inset:auto 0 0;height:18%;background:repeating-linear-gradient(90deg,#171320 0 3%,transparent 3% 9%) top/100% 60% no-repeat,repeating-linear-gradient(90deg,#f8e6c9 0 8.5%,#293244 8.5% 9%)}
-.sleeve-poster:after {content:"";position:absolute;top:-3%;left:-5%;width:23%;height:7%;background:#e2c299e8;transform:rotate(-15deg)}
-.sleeve-poster i {position:absolute;top:48%;left:10%;width:80%;height:13%;background:#ffebc8;border-radius:50%;transform:rotate(-10deg);box-shadow:0 5px 0 #172b5a}
-.sleeve-poster i:before {content:"";position:absolute;bottom:42%;left:19%;width:60%;height:240%;border-radius:38% 38% 12% 12%;background:linear-gradient(175deg,#fff1ce,#d7bd99 68%,#142448 69% 88%,#f5dfbe 89%)}
-.record-sleeve {display:block;width:100%;height:auto;aspect-ratio:1;object-fit:contain;background:#100c10;border-radius:5px}
-.release.flagship .record-sleeve {align-self:center}
-@media(max-width:700px){
-  .music-hero {flex-direction:column;align-items:flex-start;gap:2rem;padding:42px 6vw}
-  .music-hero .hero-content {width:100%;order:0}
-  .sleeve-poster {position:relative;right:auto;align-self:center;width:min(72%,330px);order:1}
-}
-/* Give the fine script room for ascenders and long capital strokes. */
-body {font-synthesis:none;font-size:1.45rem}
-body :is(h1,h2,h3,h4,strong,b,a,button,.kicker,.eyebrow) {font-weight:400}
-body :is(.kicker,.eyebrow) {text-transform:none;letter-spacing:normal}
-.music-hero h1 {line-height:1.12;letter-spacing:0;font-weight:400}
-.music-hero h1 .hero-signature {display:block;font-size:1.55em;line-height:.98}
-.music-hero h1 span {display:block;font-size:.66em;line-height:1.22;margin-top:.3em}
-.music-hero .hero-copy {font-size:clamp(1.45rem,2vw,1.9rem);line-height:1.3}
+:root{--paper:#f9e8c7;--ink:#0b192c;--cobalt:#203e94;--script:"Mrs Saint Delafield","Snell Roundhand",cursive;--sans:var(--script);--mono:var(--script);--display:var(--script);--pink:var(--paper)}
+body{background:var(--ink);color:var(--paper);font:1.55rem/1.28 var(--script);font-synthesis:none}
+body :is(h1,h2,h3,h4,a,p,button,b,strong,small,span,summary,li){font-family:var(--script);font-weight:400;letter-spacing:normal}
+body:before,body:after,.grain,.ambient-light,.stars,.walkman{display:none}
+.site-header{background:var(--ink);border-bottom:1px solid #d4c19980}.site-header a,.site-header .wordmark{color:var(--paper)}.site-header nav a.active{background:transparent;color:var(--paper);text-decoration:underline;text-underline-offset:.3em}
+.blue-cover,.record-shelf,.case-archive,.case-file,.more-notes{width:min(1080px,94%);margin:0 auto}
+.blue-cover img{display:block;width:100%;height:auto}.blue-cover a{display:block}
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.record-shelf,.case-archive{padding:1rem 0 2rem;scroll-margin-top:6rem}.record-shelf h2,.case-archive h1{margin:.3em 0;text-align:center;font-size:clamp(2.8rem,6vw,5.6rem);line-height:1.1}
+.case-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(.4rem,3vw,2rem);border-bottom:5px solid #ccb58c;padding:0 .5rem .65rem}
+.case-link{display:block;color:var(--paper);line-height:1.1}.case-link img{display:block;width:100%;aspect-ratio:1;object-fit:cover}.case-link span{display:block;margin-top:.4em}.case-link:hover span,.case-link:focus-visible span{text-decoration:underline}
+.case-archive,.case-file{padding-top:2rem}.case-list{display:grid;gap:.6rem;margin:1rem 0 2rem}.case-list .case-link,.case-file article,.cv-sidebar,.tracklist,.education article{background:#f4e2bd;color:var(--ink);border:1px solid #cdb487;border-radius:3px}.case-list .case-link{display:flex;align-items:center;gap:1.2rem;padding:.7rem 1rem;font-size:clamp(2rem,4vw,3.3rem)}.case-list img{width:clamp(55px,11vw,110px)}.case-list [hidden]{display:none}
+.case-file article{margin:1rem 0;padding:clamp(1rem,4vw,3rem)}.case-file article img{max-width:320px}.case-file article :is(h2,h3,p,small,span),.cv-sidebar :is(p,span,h2,h3),.tracklist :is(p,span,h2,h3),.education article :is(p,h3){color:var(--ink)}
+.case-file .credit-grid>*,.case-file .tag-row span,.tracklist .track,.cv-sidebar .award{background:#ecdbb9;color:var(--ink)}
+.more-notes{margin-block:2rem}.more-notes summary{cursor:pointer}
+.resume-hero{display:block;min-height:0;padding-block:2rem}.resume-hero h1{color:var(--paper)}.now-playing{background:#101d31;border:1px solid #998d7c;color:var(--paper)}.now-playing .track-progress i{background:#ed86ac}
+@media(max-width:650px){.case-grid{font-size:1.25rem}.site-header nav{background:var(--ink)}.case-file article{display:block}}
