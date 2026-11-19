@@ -15,3 +15,27 @@ body:before,body:after,.grain,.ambient-light,.stars,.walkman{display:none}
 .more-notes{margin-block:2rem}.more-notes summary{cursor:pointer}
 .resume-hero{display:block;min-height:0;padding-block:2rem}.resume-hero h1{color:var(--paper)}.now-playing{background:#101d31;border:1px solid #998d7c;color:var(--paper)}.now-playing .track-progress i{background:#ed86ac}
 @media(max-width:650px){.case-grid{font-size:1.25rem}.site-header nav{background:var(--ink)}.case-file article{display:block}}
+
+
+/* Interior pages pair the signature masthead with readable liner notes. */
+body:is([data-page="projects"], [data-page="resume"]) {
+  --sans: "Outfit", system-ui, sans-serif;
+  --display: var(--sans);
+  --mono: "DM Mono", monospace;
+  --script: var(--sans);
+  font: 1.0625rem/1.65 var(--sans);
+}
+body:is([data-page="projects"], [data-page="resume"]) .wordmark {
+  font-family: "Mrs Saint Delafield", "Snell Roundhand", cursive;
+  font-size: 2.35rem;
+}
+body:is([data-page="projects"], [data-page="resume"]) main :is(h1,h2,h3,h4,strong,b) {
+  font-weight: 600;
+  line-height: 1.18;
+}
+.case-list .case-link {
+  font-size: clamp(1.15rem, 2.3vw, 1.75rem);
+  line-height: 1.3;
+}
+.case-list .case-link span { margin-top: 0; }
+.case-file p, .track p { max-width: 68ch; }
