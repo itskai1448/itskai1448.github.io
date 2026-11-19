@@ -1,5 +1,5 @@
 :root {
-  --script: "Yellowtail", "Snell Roundhand", cursive;
+  --script: "Mrs Saint Delafield", "Snell Roundhand", cursive;
   --sans: var(--script);
   --display: var(--script);
   --mono: var(--script);
@@ -28,3 +28,11 @@ body :is(h1,h2,h3,h4,p,a,button,span,strong,small,b,li,dt,dd,label,summary,figca
   .music-hero .hero-content {width:100%;order:0}
   .sleeve-poster {position:relative;right:auto;align-self:center;width:min(72%,330px);order:1}
 }
+/* Give the fine script room for ascenders and long capital strokes. */
+body {font-synthesis:none;font-size:1.45rem}
+body :is(h1,h2,h3,h4,strong,b,a,button,.kicker,.eyebrow) {font-weight:400}
+body :is(.kicker,.eyebrow) {text-transform:none;letter-spacing:normal}
+.music-hero h1 {line-height:1.12;letter-spacing:0;font-weight:400}
+.music-hero h1 .hero-signature {display:block;font-size:1.55em;line-height:.98}
+.music-hero h1 span {display:block;font-size:.66em;line-height:1.22;margin-top:.3em}
+.music-hero .hero-copy {font-size:clamp(1.45rem,2vw,1.9rem);line-height:1.3}
