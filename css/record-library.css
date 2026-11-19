@@ -1,4 +1,4 @@
-:root{--paper:#f9e8c7;--ink:#0b192c;--cobalt:#203e94;--script:"Mrs Saint Delafield","Snell Roundhand",cursive;--sans:var(--script);--mono:var(--script);--display:var(--script);--pink:var(--paper)}
+:root{--paper:#f9e8c7;--ink:#0b192c;--cobalt:#203e94;--script:"Outfit",system-ui,sans-serif;--sans:var(--script);--mono:var(--script);--display:var(--script);--pink:var(--paper)}
 body{background:var(--ink);color:var(--paper);font:1.55rem/1.28 var(--script);font-synthesis:none}
 body :is(h1,h2,h3,h4,a,p,button,b,strong,small,span,summary,li){font-family:var(--script);font-weight:400;letter-spacing:normal}
 body:before,body:after,.grain,.ambient-light,.stars,.walkman{display:none}
@@ -17,19 +17,16 @@ body:before,body:after,.grain,.ambient-light,.stars,.walkman{display:none}
 @media(max-width:650px){.case-grid{font-size:1.25rem}.site-header nav{background:var(--ink)}.case-file article{display:block}}
 
 
-/* Interior pages pair the signature masthead with readable liner notes. */
-body:is([data-page="projects"], [data-page="resume"]) {
+/* The handwritten hero is embedded artwork. All interface text uses Outfit. */
+body {
   --sans: "Outfit", system-ui, sans-serif;
   --display: var(--sans);
-  --mono: "DM Mono", monospace;
+  --mono: var(--sans);
   --script: var(--sans);
   font: 1.0625rem/1.65 var(--sans);
 }
-body:is([data-page="projects"], [data-page="resume"]) .wordmark {
-  font-family: "Mrs Saint Delafield", "Snell Roundhand", cursive;
-  font-size: 2.35rem;
-}
-body:is([data-page="projects"], [data-page="resume"]) main :is(h1,h2,h3,h4,strong,b) {
+body .site-header .wordmark {font-family:var(--sans);font-weight:600}
+body main :is(h1,h2,h3,h4,strong,b) {
   font-weight: 600;
   line-height: 1.18;
 }
