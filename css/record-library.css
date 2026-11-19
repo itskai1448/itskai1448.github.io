@@ -1,0 +1,17 @@
+:root{--paper:#f9e8c7;--ink:#0b192c;--cobalt:#203e94;--script:"Mrs Saint Delafield","Snell Roundhand",cursive;--sans:var(--script);--mono:var(--script);--display:var(--script);--pink:var(--paper)}
+body{background:var(--ink);color:var(--paper);font:1.55rem/1.28 var(--script);font-synthesis:none}
+body :is(h1,h2,h3,h4,a,p,button,b,strong,small,span,summary,li){font-family:var(--script);font-weight:400;letter-spacing:normal}
+body:before,body:after,.grain,.ambient-light,.stars,.walkman{display:none}
+.site-header{background:var(--ink);border-bottom:1px solid #d4c19980}.site-header a,.site-header .wordmark{color:var(--paper)}.site-header nav a.active{background:transparent;color:var(--paper);text-decoration:underline;text-underline-offset:.3em}
+.blue-cover,.record-shelf,.case-archive,.case-file,.more-notes{width:min(1080px,94%);margin:0 auto}
+.blue-cover img{display:block;width:100%;height:auto}.blue-cover a{display:block}
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.record-shelf,.case-archive{padding:1rem 0 2rem;scroll-margin-top:6rem}.record-shelf h2,.case-archive h1{margin:.3em 0;text-align:center;font-size:clamp(2.8rem,6vw,5.6rem);line-height:1.1}
+.case-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(.4rem,3vw,2rem);border-bottom:5px solid #ccb58c;padding:0 .5rem .65rem}
+.case-link{display:block;color:var(--paper);line-height:1.1}.case-link img{display:block;width:100%;aspect-ratio:1;object-fit:cover}.case-link span{display:block;margin-top:.4em}.case-link:hover span,.case-link:focus-visible span{text-decoration:underline}
+.case-archive,.case-file{padding-top:2rem}.case-list{display:grid;gap:.6rem;margin:1rem 0 2rem}.case-list .case-link,.case-file article,.cv-sidebar,.tracklist,.education article{background:#f4e2bd;color:var(--ink);border:1px solid #cdb487;border-radius:3px}.case-list .case-link{display:flex;align-items:center;gap:1.2rem;padding:.7rem 1rem;font-size:clamp(2rem,4vw,3.3rem)}.case-list img{width:clamp(55px,11vw,110px)}.case-list [hidden]{display:none}
+.case-file article{margin:1rem 0;padding:clamp(1rem,4vw,3rem)}.case-file article img{max-width:320px}.case-file article :is(h2,h3,p,small,span),.cv-sidebar :is(p,span,h2,h3),.tracklist :is(p,span,h2,h3),.education article :is(p,h3){color:var(--ink)}
+.case-file .credit-grid>*,.case-file .tag-row span,.tracklist .track,.cv-sidebar .award{background:#ecdbb9;color:var(--ink)}
+.more-notes{margin-block:2rem}.more-notes summary{cursor:pointer}
+.resume-hero{display:block;min-height:0;padding-block:2rem}.resume-hero h1{color:var(--paper)}.now-playing{background:#101d31;border:1px solid #998d7c;color:var(--paper)}.now-playing .track-progress i{background:#ed86ac}
+@media(max-width:650px){.case-grid{font-size:1.25rem}.site-header nav{background:var(--ink)}.case-file article{display:block}}
