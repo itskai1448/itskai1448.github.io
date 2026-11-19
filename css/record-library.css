@@ -1,0 +1,30 @@
+:root {
+  --script: "Yellowtail", "Snell Roundhand", cursive;
+  --sans: var(--script);
+  --display: var(--script);
+  --mono: var(--script);
+  --pink: #ff529c;
+  --black: #100b10;
+}
+body {background:var(--black);color:#fff1ed;font:1.2rem/1.55 var(--script)}
+body :is(h1,h2,h3,h4,p,a,button,span,strong,small,b,li,dt,dd,label,summary,figcaption) {font-family:var(--script);letter-spacing:normal}
+.wordmark, .music-hero h1, .track-heading h2 {color:var(--pink)}
+.site-header {background:#110c12f5;border-bottom:1px solid #74304f}
+.apple-button,.button.primary {background:#ff69a7;color:#210914}
+.music-hero {isolation:isolate;background:radial-gradient(ellipse at 83% 59%,#351528,transparent 55%),#0d0a0f}
+.music-hero .realistic-room {display:none}
+.music-hero .hero-content {width:49%;max-width:720px}
+.music-hero h1 {font-size:clamp(3rem,5.5vw,6rem);line-height:1.08}
+.music-hero h1 span {color:#ffe4e7}
+.sleeve-poster {position:absolute;right:7%;width:35%;aspect-ratio:0.94;transform:rotate(3deg);border:5px solid #e8d6b9;background:linear-gradient(125deg,transparent 45%,#ffeac6 45% 64%,transparent 64%),#2143a3;box-shadow:17px 12px 0 #07070a}
+.sleeve-poster:before {content:"";position:absolute;inset:auto 0 0;height:18%;background:repeating-linear-gradient(90deg,#171320 0 3%,transparent 3% 9%) top/100% 60% no-repeat,repeating-linear-gradient(90deg,#f8e6c9 0 8.5%,#293244 8.5% 9%)}
+.sleeve-poster:after {content:"";position:absolute;top:-3%;left:-5%;width:23%;height:7%;background:#e2c299e8;transform:rotate(-15deg)}
+.sleeve-poster i {position:absolute;top:48%;left:10%;width:80%;height:13%;background:#ffebc8;border-radius:50%;transform:rotate(-10deg);box-shadow:0 5px 0 #172b5a}
+.sleeve-poster i:before {content:"";position:absolute;bottom:42%;left:19%;width:60%;height:240%;border-radius:38% 38% 12% 12%;background:linear-gradient(175deg,#fff1ce,#d7bd99 68%,#142448 69% 88%,#f5dfbe 89%)}
+.record-sleeve {display:block;width:100%;height:auto;aspect-ratio:1;object-fit:contain;background:#100c10;border-radius:5px}
+.release.flagship .record-sleeve {align-self:center}
+@media(max-width:700px){
+  .music-hero {flex-direction:column;align-items:flex-start;gap:2rem;padding:42px 6vw}
+  .music-hero .hero-content {width:100%;order:0}
+  .sleeve-poster {position:relative;right:auto;align-self:center;width:min(72%,330px);order:1}
+}
