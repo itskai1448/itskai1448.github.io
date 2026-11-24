@@ -1,0 +1,4 @@
+Vinyl GL by Guillermo Rauch (2026)
+https://github.com/rauchg/vinyl
+https://vinyl-gl.vercel.app/
+Hosted app embedded on demand; no source or audio bundled. Upstream code is MIT-licensed, recordings retain their own licences.
